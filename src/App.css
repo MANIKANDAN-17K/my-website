@@ -1,38 +1,124 @@
-.App {
-  text-align: center;
+.light {
+  background-color: #ffffff;
+  color: #000;
+  transition: background-color 0.5s, color 0.5s;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.dark {
+  background-color: #121212;
+  color: #fff;
+  transition: background-color 0.5s, color 0.5s;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.fade-in {
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
-.App-header {
+.slide-in {
+  animation: slideIn 1.5s ease-in-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.navbar {
   background-color: #282c34;
-  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 0 20px #61dafb;
+  animation: glow 2s infinite alternate;
+  border-radius: 10px;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 20px #61dafb, 0 0 30px #4fa3d1;
+  }
+  100% {
+    box-shadow: 0 0 40px #61dafb, 0 0 60px #4fa3d1;
+  }
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.nav-links a:hover {
+  color: #61dafb;
+  transform: scale(1.1);
+}
+
+.image-container {
+  text-align: center;
+  margin: 40px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.sample-image {
+  width: 60%;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.sample-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #282c34;
   color: white;
+  border-radius: 10px;
 }
 
-.App-link {
+.footer p {
+  margin: 0;
+}
+
+.footer .social-links {
+  margin-top: 10px;
+}
+
+.footer .social-links a {
   color: #61dafb;
+  text-decoration: none;
+  margin: 0 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.footer .social-links a:hover {
+  text-decoration: underline;
 }
